@@ -15,7 +15,7 @@ fi
 
 echo "[*] Fast scanning all TCP ports on $IP..."
 
-cmd="nmap --min-rate 4500 --max-rtt-timeout 1500ms -p- -Pn -oG all_ports.gnmap $IP"
+cmd="nmap --min-rate 4500 --max-rtt-timeout 1500ms -p- -Pn $IP -oG all_ports.gnmap"
 run "$cmd"
 
 echo "[*] Extracting open TCP ports..."
@@ -27,10 +27,10 @@ if [ -z "$TCP_PORTS" ]; then
 else
   echo "[*] Running detailed TCP scan on: $TCP_PORTS"
   
-  cmd="nmap -sC -sV -T4 -Pn -p$TCP_PORTS -oA full_tcp $IP"
+  cmd="nmap -sC -sV -T4 -Pn -p$TCP_PORTS $IP -oA full_tcp"
   run "$cmd"
 fi
 
 echo "[*] Scanning top 100 UDP ports..."
-cmd="nmap -sU --top-ports 100 -T4 -Pn -oA top_udp $IP"
+cmd="nmap -sU --top-ports 100 -T4 -Pn $IP -oA top_udp"
 run "$cmd"
