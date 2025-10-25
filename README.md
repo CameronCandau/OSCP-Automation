@@ -1,4 +1,4 @@
-# OSCP Toolkit
+# OSCP Automation
 
 Workflow automation for OSCP labs and exam. Handles target initialization, enumeration, and workspace management.
 
