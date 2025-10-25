@@ -4,10 +4,10 @@ Workflow automation for OSCP labs and exam. Handles target initialization, enume
 
 ## Setup
 ```bash
-git clone <repo-url> ~/oscp-toolkit
-cd ~/oscp-toolkit
+git clone https://github.com/CameronCandau/OSCP-Automation ~/oscp-automation
+cd ~/oscp-automation
 make install
-echo 'source ~/oscp-toolkit/config/shellrc-additions.sh' >> ~/.zshrc
+echo 'source ~/oscp-automation/config/shellrc-additions.sh' >> ~/.zshrc
 source ~/.zshrc
 ```
 
@@ -43,6 +43,6 @@ parse-ports   # Extract open ports to markdown
 
 ## Uninstall
 ```bash
-cd ~/oscp-toolkit
+cd ~/oscp-automation
 make uninstall
 ```
