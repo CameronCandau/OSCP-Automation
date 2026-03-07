@@ -8,4 +8,4 @@ if [ ! -f nmap/all_ports.gnmap ]; then
 fi
 
 echo "TCP Ports:"
-grep -oP '\d+/open' nmap/all_ports.gnmap | cut -d/ -f1 | sed 's/^/- [ ] /'
+grep -Eo '[0-9]+/open' nmap/all_ports.gnmap | cut -d/ -f1 | sed 's/^/- [ ] /'

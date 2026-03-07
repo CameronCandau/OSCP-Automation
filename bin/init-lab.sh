@@ -27,10 +27,10 @@ while read -r line; do
     [[ -z "$line" || "$line" =~ ^# ]] && continue
     
     # Parse IP and optional name
-    IP=$(echo $line | awk '{print $1}')
-    NAME=$(echo $line | awk '{print $2}')
-    
-    new-target $IP $NAME
+    IP=$(echo "$line" | awk '{print $1}')
+    NAME=$(echo "$line" | awk '{print $2}')
+
+    new-target "$IP" "$NAME"
     echo ""
 done < "$HOSTS_FILE"
 
